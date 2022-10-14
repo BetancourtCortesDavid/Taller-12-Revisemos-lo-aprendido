@@ -1,6 +1,7 @@
 
 public class Persona {
 
+	//definir valores deffault
 	private final static char sexoDeffault = 'H';
 	
 	public static final int bajoPeso = -1;
@@ -9,6 +10,7 @@ public class Persona {
 	
 	public static final int sobrePeso = 1;
 	
+	//variables
 	private String n;
 	
 	private int edad;
@@ -21,14 +23,17 @@ public class Persona {
 	
 	private double h;
 
+	//Constructor deffault
 	public Persona() {
 		this("", 0, sexoDeffault, 0, 0);
 	}
 
+	//Construcor con 3 datos
 	public Persona(String n, int edad, char sexo) {
 		this(n, edad, sexo, 0, 0);
 	}
 
+	//Constructor con los 5 datos
 	public Persona(String n, int edad, char sexo, double w, double h) {
 		this.n = n;
 		this.edad = edad;
@@ -38,13 +43,15 @@ public class Persona {
 		this.h = h;
 	}
 	
+	//metodos privados
+	//comprobar el sexo
 	@SuppressWarnings("unused")
 	private void comprobarSexo() {
 		if((sexo != 'H'||sexo != 'h') && (sexo != 'M'||sexo != 'm')) {
 			this.sexo=sexoDeffault;
 		}
 	}
-	
+	//generar un id aleatorio...
 	private void generarId() {
 		final int divisor = 23;
 		
@@ -61,7 +68,7 @@ public class Persona {
 		char letras[]= {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
 		return letras[r];
 	}
-/*
+/*  Metodos publicos
 	public String getN() {
 		return n;
 	}*/
@@ -102,6 +109,7 @@ public class Persona {
 		this.h = h;
 	}
 	
+	//calcular el IMC
 	public int calcularIMC() {
 		double pesoR = w / (Math.pow(h, 2));
 		
@@ -114,6 +122,7 @@ public class Persona {
 		}
 	}
 	
+	//Logica para mayor o menor de edad
 	public boolean esMayorDeEdad() {
 		boolean mayor = false;
 		if(edad>=18) {
@@ -122,6 +131,7 @@ public class Persona {
 		return mayor;
 	}
 
+	//logica para el genero 
 	@Override
 	public String toString() {
 		String sexo;

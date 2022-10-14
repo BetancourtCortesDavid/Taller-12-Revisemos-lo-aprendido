@@ -3,7 +3,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//Introducimos los datos
+		//pedir los datos
 		 String nombre = JOptionPane.showInputDialog("Introduce el nombre");
 		 String texto = JOptionPane.showInputDialog("Introduce la edad");
 		 int edad = Integer.parseInt(texto);
@@ -13,11 +13,11 @@ public class Principal {
 		 double peso = Double.parseDouble(texto);
 		 texto = JOptionPane.showInputDialog("Introduce la altura");
 		 double altura = Double.parseDouble(texto);
-		 //Creamos objetos con cada constructor
+		 //Crear objetos
 		 Persona persona1 = new Persona();
 		 Persona persona2 = new Persona(nombre, edad, sexo);
 		 Persona persona3 = new Persona(nombre, edad, sexo, peso, altura);
-		 //Los datos que no esten completos los insertamos con los metodos set
+		 //Completamos los datos incompletos con los Set
 		 persona1.setN("Laura");
 		 persona1.setEdad(30);
 		 persona1.setSexo('M');
@@ -39,7 +39,8 @@ public class Principal {
 		 MuestraMayorDeEdad(persona3);
 		 System.out.println(persona3.toString());
 		 }
-		 public static void MuestraMensajePeso(Persona p) {
+		//salidas 
+		public static void MuestraMensajePeso(Persona p) {
 		 int IMC = p.calcularIMC();
 		 switch (IMC) {
 		 case Persona.pesoIdeal:
@@ -60,8 +61,6 @@ public class Principal {
 		 System.out.println("La persona no es mayor de edad");
 		 }
 		 
-		
-
 	}
 
 }
